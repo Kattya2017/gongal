@@ -9,6 +9,8 @@ const formularioregistrocliente = document.querySelector('#formularioregistrocli
 const formulariosubcategoria = document.querySelector('#formsubca');
 const formularioopcategoria = document.querySelector('#formop');
 const formularioproducto = document.querySelector('#formpro');
+const formularioregistromarca=document.querySelector('#formularioregistromarca
+
 eventListener();
 
 function eventListener() {
@@ -27,6 +29,9 @@ function eventListener() {
     }
     if (formularioproducto) {
         formularioproducto.addEventListener('submit', crearproducto);
+    }
+    if(formularioregistromarca){
+        formularioregistromarca.addEventListener('submit', crearmarca);
     }
 
 
@@ -234,3 +239,34 @@ function crearproducto(e) {
         xhre.send(datos);
     }
 }
+
+function crearmarca(e){
+    e.preventDefault();
+    var nombremarca=document.querySelector('#nombremarca').value;
+    var tipomarca=document.querySelector('#tipomarca').value;
+
+    if (nombremarca === "") {
+        alert('No se ingresaron datos');
+    }
+    else{
+        var datos=new FormData();
+        datos.append('nombremarca', nombremarca);
+        datos.append('tipomarca', tipomarca);
+
+        //crear variable ajax
+        var xhr=new XMLHttpRequest();
+        //guardar en php
+        xhr.open('POST', 'inc/modelos/mod-reg-marca.php', true);
+        //recibir respuesta
+        xhr.onload = function() {
+            if (this.status === 200) {
+                var respuesta = JSON.parse(xhr.responseText);
+                if (respuesta.respuesta === "correcto") {
+                    alert('Marca registrada');
+                }
+            }
+        }
+        //enviar datos
+        xhr.send(datos);
+    }
+    }
