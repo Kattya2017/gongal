@@ -5,7 +5,7 @@
         <!-- Content Wrapper. Contains page content -->
         <br>
         <div class="content-wrapper">
-            
+
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -29,13 +29,13 @@
                                             </div>
                                         </div>
 
-                                    
+
                                         <div class="row justify-content-end">
                                             <div class="col-md-3">
                                             <input type="hidden" name="" id="tipomarca" value="crearmarca">
                                             <button type="submit" class="btn btn-block btn-outline-info">REGISTRAR</button>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
                                 </div>
