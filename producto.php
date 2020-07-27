@@ -6,7 +6,6 @@
         <!-- Content Wrapper. Contains page content -->
         <br>
         <div class="content-wrapper">
-            
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -40,7 +39,7 @@
                                                 <div class="form-group">
                                                 <label>Seleccione op_categoria</label>
                                                 <select class="select2" multiple="multiple" data-placeholder="Seleccione una opcion" style="width: 100%;" id="id_op_categoria">
-                                                <?php 
+                                                <?php
                                                 $subop=mostraropcategoria();
                                                 if($subop->num_rows)
                                                 {
@@ -49,7 +48,7 @@
 
                                                     <?php }
                                                 }
-                                                ?>                                            
+                                                ?>
                                                 </select>
                                                 </div>
                                             </div>
@@ -58,7 +57,7 @@
                                                 <div class="form-group">
                                                 <label>Seleccione Marca</label>
                                                 <select class="select2" multiple="multiple" data-placeholder="Seleccione una opcion" style="width: 100%;" id="id_marca">
-                                                <?php 
+                                                <?php
                                                 $mar=mostrarmarca();
                                                 if($mar->num_rows)
                                                 {
@@ -67,7 +66,7 @@
 
                                                     <?php }
                                                 }
-                                                ?>                                            
+                                                ?>
                                                 </select>
                                                 </div>
                                             </div>
@@ -99,7 +98,7 @@
                                                 <div class="form-group">
                                                     <label>Seleccione una talla</label>
                                                     <select class="select2" multiple="multiple" data-placeholder="Seleccione una opcion" style="width: 100%;" id="id_talla">
-                                                    <?php 
+                                                    <?php
                                                     $tall=mostrartalla();
                                                     if($tall->num_rows)
                                                     {
@@ -108,9 +107,9 @@
 
                                                         <?php }
                                                     }
-                                                    ?>                                            
+                                                    ?>
                                                     </select>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -118,7 +117,7 @@
                                                 <div class="form-group">
                                                     <label>Seleccione un color</label>
                                                     <select class="select2" multiple="multiple" data-placeholder="Seleccione una opcion" style="width: 100%;" id="id_color">
-                                                    <?php 
+                                                    <?php
                                                     $col=mostrarcolor();
                                                     if($tall->num_rows)
                                                     {
@@ -127,9 +126,9 @@
 
                                                         <?php }
                                                     }
-                                                    ?>                                            
+                                                    ?>
                                                     </select>
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
@@ -150,7 +149,7 @@
                                             <input type="hidden" name="" id="tipopro" value="crearpro">
                                             <button type="submit" class="btn btn-block btn-outline-info">Registrar</button>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
                                 </div>
