@@ -9,7 +9,8 @@ const formularioregistrocliente = document.querySelector('#formularioregistrocli
 const formulariosubcategoria = document.querySelector('#formsubca');
 const formularioopcategoria = document.querySelector('#formop');
 const formularioproducto = document.querySelector('#formpro');
-const formularioregistromarca=document.querySelector('#formularioregistromarca
+const formularioregistromarca=document.querySelector('#formularioregistromarca');
+const formularioregistrotalla=document.querySelector('#formtalla');
 
 eventListener();
 
@@ -32,6 +33,9 @@ function eventListener() {
     }
     if(formularioregistromarca){
         formularioregistromarca.addEventListener('submit', crearmarca);
+    }
+    if (formularioregistrotalla) {
+        formularioregistrotalla.addEventListener('submit', creartalla);
     }
 
 
@@ -270,3 +274,32 @@ function crearmarca(e){
         xhr.send(datos);
     }
     }
+
+    function creartalla(e) {
+            e.preventDefault();
+            var nombretalla=document.querySelector('#nombretalla').value;
+            var tipotalla=document.querySelector('#tipotalla').value;
+
+            if (nombretalla == '') {
+                alert ('No se ingresaron datos');
+            }
+            else{
+                var datos=new FormData();
+                datos.append('nombre', nombretalla);
+                datos.append('tipo', tipotalla);
+
+                var xhr=new XMLHttpRequest();
+                xhr.open('POST', 'inc/modelos/mod-reg-talla.php', true);
+
+                xhr.onload = function() {
+                    if (this.status === 200) {
+                        var respuesta = JSON.parse(xhr.responseText);
+                        if (respuesta.respuesta === "correcto") {
+                            alert('Talla registrada');
+                        }
+                    }
+                }
+                xhr.send(datos);
+            }
+
+        }
