@@ -2,12 +2,12 @@
     include_once 'inc/templates/header.php';
     include_once 'inc/templates/navegador.php';
     include_once 'inc/funciones/funciones.php';
-    
+
 ?>
         <!-- Content Wrapper. Contains page content -->
         <br>
         <div class="content-wrapper">
-            
+          
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
@@ -48,7 +48,7 @@
                                             <input type="hidden" name="" id="tipocat" value="crearcat">
                                             <button type="submit" class="btn btn-block btn-outline-info">Registrar</button>
                                             </div>
-                                            
+
                                         </div>
                                     </form>
                                 </div>

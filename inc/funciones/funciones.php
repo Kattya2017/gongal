@@ -29,7 +29,7 @@
     {
         try {
             include 'conexion.php';
-            return $conn->query('SELECT id_subcategoria, nombre_subcategoria FROM tabla_subcategoria');
+            return $conn->query('SELECT tabla_subcategoria.id_subcategoria, tabla_subcategoria.nombre_subcategoria, tabla_categoria.id_categoria, tabla_categoria.nombre_categoria FROM tabla_subcategoria INNER JOIN tabla_categoria ON tabla_subcategoria.id_categoria=tabla_categoria.id_categoria');
         } catch (Exception $e) {
             echo "El error es: " . $e->getMessage();
             return false;
@@ -39,7 +39,7 @@
     {
         try {
             include 'conexion.php';
-            return $conn->query('SELECT id_op_categoria, nombre_op_categoria FROM tabla_op_categoria');
+            return $conn->query('SELECT tabla_op_categoria.id_op_categoria, tabla_op_categoria.nombre_op_categoria, tabla_subcategoria.id_subcategoria FROM tabla_op_categoria INNER JOIN tabla_subcategoria ON tabla_op_categoria.id_subcategoria=tabla_subcategoria.id_subcategoria');
         } catch (Exception $e) {
             echo "El error es: " . $e->getMessage();
             return false;

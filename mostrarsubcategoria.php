@@ -15,7 +15,7 @@
                             <!-- Default box -->
                             <div class="card card-info">
                                 <div class="card-header">
-                                    <h3 class="card-title">Mostrar Marca</h3>
+                                    <h3 class="card-title">Mostrar Sub Categoria</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body" >
@@ -29,22 +29,26 @@
                   <thead>
                   <tr>
                     <th>Item</th>
-                    <th>Marca</th>
+                    <th>Subcategoria</th>
+                    <th>Categori</th>
                   </tr>
                   </thead>
+
                   <tbody>
-                    <?php
-                     $mosmar=mostrarmarca();
-                     if($mosmar->num_rows)
-                     {
-                       foreach ($mosmar as $mosmar1) { ?>
-                        <tr>
-                          <td><?php echo $mosmar1['id_marca']; ?></td>
-                          <td><?php echo $mosmar1['nombre_marca']; ?></td>
-                        </tr>
-                       <?php }
-                     }
-                    ?>
+                  <?php
+                  $mossub=mostrarsubcategoria();
+                  if($mossub->num_rows){
+                    foreach ($mossub as $mossub1) {?>
+
+                      <tr>
+                        <td> <?php echo $mossub1['id_subcategoria']; ?> </td>
+                        <td> <?php echo $mossub1['nombre_subcategoria']; ?> </td>
+                        <td> <?php echo $mossub1['id_categoria'];?> </td>
+                      </tr>
+
+                      <?php
+                  }
+                  }?>
 
 
                   </tbody>

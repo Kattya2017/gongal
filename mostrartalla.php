@@ -15,7 +15,7 @@
                             <!-- Default box -->
                             <div class="card card-info">
                                 <div class="card-header">
-                                    <h3 class="card-title">Mostrar Marca</h3>
+                                    <h3 class="card-title">Mostrar Talla</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body" >
@@ -29,23 +29,23 @@
                   <thead>
                   <tr>
                     <th>Item</th>
-                    <th>Marca</th>
+                    <th>Talla</th>
                   </tr>
                   </thead>
                   <tbody>
-                    <?php
-                     $mosmar=mostrarmarca();
-                     if($mosmar->num_rows)
-                     {
-                       foreach ($mosmar as $mosmar1) { ?>
-                        <tr>
-                          <td><?php echo $mosmar1['id_marca']; ?></td>
-                          <td><?php echo $mosmar1['nombre_marca']; ?></td>
-                        </tr>
-                       <?php }
-                     }
-                    ?>
 
+                    <?php
+                    $mostalla=mostrartalla();
+                    if($mostalla->num_rows){
+                      foreach ($mostalla as $mostalla1) {?>
+                        <tr>
+                        <td><?php echo $mostalla1['id_talla'];?></td>
+                        <td><?php echo $mostalla1['nombre_talla'];?></td>
+                        </tr>
+                        <?php
+                      }
+                    }
+                    ?>
 
                   </tbody>
                 </table>

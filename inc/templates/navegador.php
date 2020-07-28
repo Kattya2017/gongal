@@ -166,6 +166,24 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
+                              <li class="nav-item">
+                                  <a href="mostrarcategoria.php" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Mostrar Categoria</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="mostrarsubcategoria.php" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Mostrar Subcategoria</p>
+                                  </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a href="mostraropcategoria.php" class="nav-link">
+                                      <i class="far fa-circle nav-icon"></i>
+                                      <p>Mostrar Op Categoria</p>
+                                  </a>
+                              </li>
                                 <li class="nav-item">
                                     <a href="mostrarmarca.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
