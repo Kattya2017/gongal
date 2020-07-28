@@ -11,7 +11,7 @@ const formularioopcategoria = document.querySelector('#formop');
 const formularioproducto = document.querySelector('#formpro');
 const formularioregistromarca=document.querySelector('#formularioregistromarca');
 const formularioregistrotalla=document.querySelector('#formtalla');
-
+const formularioregistrocolor=document.querySelector('#formcolor');
 eventListener();
 
 function eventListener() {
@@ -36,6 +36,9 @@ function eventListener() {
     }
     if (formularioregistrotalla) {
         formularioregistrotalla.addEventListener('submit', creartalla);
+    }
+    if(formularioregistrocolor){
+      formularioregistrocolor.addEventListener('submit', crearcolor);
     }
 
 
@@ -244,7 +247,7 @@ function crearproducto(e) {
     }
 }
 
-function crearmarca(e){
+function crearmarca(e) {
     e.preventDefault();
     var nombremarca=document.querySelector('#nombremarca').value;
     var tipomarca=document.querySelector('#tipomarca').value;
@@ -275,31 +278,56 @@ function crearmarca(e){
     }
     }
 
-    function creartalla(e) {
-            e.preventDefault();
-            var nombretalla=document.querySelector('#nombretalla').value;
-            var tipotalla=document.querySelector('#tipotalla').value;
+function creartalla(e) {
+    e.preventDefault();
+    var nombretalla=document.querySelector('#nombretalla').value;
+    var tipotalla=document.querySelector('#tipotalla').value;
 
-            if (nombretalla == '') {
-                alert ('No se ingresaron datos');
-            }
-            else{
-                var datos=new FormData();
-                datos.append('nombre', nombretalla);
-                datos.append('tipo', tipotalla);
+    if (nombretalla == '') {
+    alert ('No se ingresaron datos');
+    }
+    else{
+    var datos=new FormData();
+    datos.append('nombre', nombretalla);
+    datos.append('tipo', tipotalla);
 
-                var xhr=new XMLHttpRequest();
-                xhr.open('POST', 'inc/modelos/mod-reg-talla.php', true);
+    var xhr=new XMLHttpRequest();
+    xhr.open('POST', 'inc/modelos/mod-reg-talla.php', true);
 
-                xhr.onload = function() {
-                    if (this.status === 200) {
-                        var respuesta = JSON.parse(xhr.responseText);
-                        if (respuesta.respuesta === "correcto") {
-                            alert('Talla registrada');
-                        }
+    xhr.onload = function() {
+    if (this.status === 200) {
+    var respuesta = JSON.parse(xhr.responseText);
+    if (respuesta.respuesta === "correcto") {
+    alert('Talla registrada');
                     }
                 }
-                xhr.send(datos);
             }
-
+            xhr.send(datos);
         }
+
+    }
+    function crearcolor(e) {
+      e.preventDefault();
+      var nombrecolor=document.querySelector('#nombrecolor').value;
+      var tipocolor=document.querySelector('#tipocolor').value;
+      if(nombrecolor== ''){
+        alert ('No se ingresaron datos');
+      }else{
+        var dato=new FormData();
+        dato.append('nombre', nombrecolor);
+        dato.append('tipo', tipocolor);
+
+        var xhr=new XMLHttpRequest();
+        xhr.open('POST', 'inc/modelos/mod-reg-color.php', true);
+
+        xhr.onload=function(){
+          if(this.status === 200){
+            var respuesta = JSON.parse(xhr.responseText);
+            if(respuesta.respuesta === 'correcto'){
+              alert('Color registrado');
+            }
+          }
+        }
+        xhr.send(dato);
+      }
+    }

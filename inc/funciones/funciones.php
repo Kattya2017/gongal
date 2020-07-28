@@ -4,7 +4,7 @@
 
     function mostrarusuario()
     {
-        
+
         try {
             include 'conexion.php';
             return $conn->query('SELECT id_cliente, nombre_cliente,apellido_paterno,apellido_materno FROM tabla_cliente');
@@ -15,7 +15,7 @@
     }
     function mostrarcategoria()
     {
-        
+
         try {
             include 'conexion.php';
             return $conn->query('SELECT id_categoria, nombre_categoria FROM tabla_categoria');
@@ -67,7 +67,7 @@
 
         }
     }
-    
+
     function mostrarcolor()
     {
         try {
@@ -78,5 +78,5 @@
             return false;
         }
     }
-    
+
 ?>

@@ -88,9 +88,21 @@
                                         <p>Registro marca</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="talla.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Registro talla</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="color.php" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Registro color</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
@@ -161,15 +173,15 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../charts/flot.html" class="nav-link">
+                                    <a href="mostrartalla.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Flot</p>
+                                        <p>Mostrar Talla</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="../charts/inline.html" class="nav-link">
+                                    <a href="mostrarcolor.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Inline</p>
+                                        <p>Mostrar Color</p>
                                     </a>
                                 </li>
                             </ul>

@@ -2,18 +2,18 @@
     $nombre=$_POST['nombre'];
     $tipo=$_POST['tipo'];
 
-    if($tipo=="creartalla")
+    if($tipo=="crearcolor")
     {
 
         include '../funciones/conexion.php';
         try {
-          $stmt=$conn->prepare('INSERT INTO tabla_talla (nombre_talla) VALUES (?)');
-          $stmt->bind_param('s', $nombre);
-          $stmt->execute();
+          $kat=$conn->prepare('INSERT INTO tabla_color (nombre_color) VALUES (?)');
+          $kat->bind_param('s', $nombre);
+          $kat->execute();
           $respuesta=array(
             'respuesta'=>'correcto'
           );
-          $stmt->close();
+          $kat->close();
           $conn->close();
         } catch (Exception $e) {
           $respuesta=array(
@@ -22,7 +22,5 @@
         }
 
     }
-
-
     echo json_encode($respuesta);
 ?>
